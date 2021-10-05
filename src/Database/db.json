@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "Muhammed1",
+      "surname": "Salah",
+      "email": "muhammed.salah@gmail.com",
+      "phone": "0534 474 9890",
+      "id": 1
+    },
+    {
+      "name": "Erdem Doganay",
+      "surname": "Doganay",
+      "email": "erdemdoganayiletisim@gmail.com",
+      "phone": "05344749890",
+      "id": 2
+    }
+  ]
+}
