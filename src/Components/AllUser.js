@@ -4,6 +4,10 @@ import { Table, TableHead, TableCell, TableBody, TableRow, makeStyles, Button } 
 import { Link } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import { FaTrash } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
+
+
 
 const useStyle = makeStyles({
     table: {
@@ -46,7 +50,7 @@ export const AllUser = () => {
         <div>
             {
                 showAlert ?
-                    <Stack sx={{ width: '90%', margin:"Auto", marginTop: '1rem' }} spacing={5}>
+                    <Stack sx={{ width: '90%', margin: "Auto", marginTop: '1rem' }} spacing={5}>
                         <Alert variant="outlined" severity="success">
                             <b> Congratulations ! </b> the user was deleted !
                         </Alert>
@@ -54,7 +58,7 @@ export const AllUser = () => {
                     </Stack>
                     : null
             }
-            <Table className={classes.table} style={{marginTop:'1rem'}}>
+            <Table className={classes.table} style={{ marginTop: '1rem' }}>
                 <TableHead >
                     <TableRow className={classes.thead}>
                         <TableCell>Id</TableCell>
@@ -75,8 +79,12 @@ export const AllUser = () => {
                                 <TableCell>{user.email}</TableCell>
                                 <TableCell>{user.phone}</TableCell>
                                 <TableCell>
-                                    <Button component={Link} to={`/edit/${user.id}`} variant="outlined" color='primary'>Edit</Button>
-                                    <Button onClick={() => deletedUser(user.id)} variant="outlined" color='secondary'>Delete</Button>
+                                    <Button size="small" style={{ marginRight: "0.3rem" }} component={Link} to={`/edit/${user.id}`} variant="outlined" color='primary'>
+                                        <FaUserEdit style={{marginTop:"-0.2rem", marginRight:"0.2rem"}}/>Edit
+                                    </Button>
+                                    <Button size="small" onClick={() => deletedUser(user.id)} variant="outlined" color='secondary'>
+                                        <FaTrash style={{marginTop:"-0.2rem", marginRight:"0.2rem"}}/>Delete
+                                    </Button>
                                 </TableCell>
                             </TableRow>
                         ))
